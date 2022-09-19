@@ -16,4 +16,70 @@
 
  h1 {
     font-size: 50px;
+    border: 2px, black;
+    border-style: solid;
+ }
+
+ p {
+   border: 2px, red;
+   border-style: solid
+ }
+
+ ul {
+   border: 2px, rgb(24, 226, 24);
+   border-style: solid
+ }
+
+ a {
+   border: 2px, rgb(47, 10, 228);
+   border-style: solid
+ }
+ 
+
+ .logo {
+   grid-area: logo;
+ }
+
+.movies {
+   grid-area: movies;
+}
+
+ .movie-search {
+   grid-area: movie-search;
+ }
+
+ .friend-list {
+   grid-area: friend-list;
+ }
+
+ .friend-search {
+   grid-area: friend-search;
+ }
+
+ .profile {
+   grid-area: profile;
+ }
+ 
+ .grid-container {
+   height: 100vh;
+   display: grid;
+   grid-template-rows: 1.2fr 5fr 60px;
+   grid-template-columns: 1.7fr 8fr 75px;
+   grid-template-areas:
+    'logo movies profile' 
+    'friend-list movies profile' 
+    'friend-search movie-search profile';
+   gap: 2px;
+   background-color: #000000;
+ }
+
+ .grid-container > div {
+   background-color: rgba(255, 255, 255, 0.8);
+   text-align: center;
+   padding: 20px 0;
+   font-size: 30px;
+ }
+
+ body {
+   margin: 0px;
  }
