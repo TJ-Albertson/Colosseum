@@ -5,5 +5,4 @@ Rails.application.routes.draw do
   # root "articles#index"
   root "profile#index"
 
-  resources :articles
 end

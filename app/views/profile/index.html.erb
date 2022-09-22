@@ -1,5 +1,10 @@
 <div class="grid-container">
   <div class="logo">logo</div>
+  <div class="profile-details">
+    <%= image_tag "default_picture.jpg", size: "100x100" %>
+    Profile
+    <div class="profile-search">Search</div>
+  </div>
   <div class="movies">
     <% @thumbs.each do |thumb| %>
       <div>
@@ -7,9 +12,8 @@
       </div>
     <% end %>
   </div>
-  <div class="movie-search">movie-search</div>
-  <div class="friend-list">friend-list</div>
-  <div class="friend-search">friend-search</div>
+  <div class="search"><%= show_svg('search.svg') %></div>
   <div class="profile">pr</div>
-  <div class="menu">pr</div>
+  <div class="settings"><%= show_svg('gear.svg') %></div>
+  <div class="empty"></div>
 </div>

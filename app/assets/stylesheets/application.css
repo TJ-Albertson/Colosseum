@@ -16,7 +16,7 @@
 
 .movies > div {
   height: 200px;
-  width: 90%;
+  width: 70%;
   border-style: solid;
   margin: 15px;
   flex-shrink: 0;
@@ -31,39 +31,49 @@
   overflow-y: auto;
   display: flex;
   align-items: center;
-  flex-direction: column-reverse;
+  flex-direction: column;
 }
 
-.movie-search {
-  grid-area: movie-search;
+.search {
+  grid-area: search;
 }
 
-.friend-list {
-  grid-area: friend-list;
+.profile-search {
+    border-style: solid;
+    margin-top: 15px;
+    width: 45%;
 }
 
-.friend-search {
-  grid-area: friend-search;
+.profile-details {
+  grid-area: profile-details;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .profile {
   grid-area: profile;
 }
 
-.menu {
-  grid-area: menu;
+.empty {
+    grid-area: empty;
+  }
+
+.settings {
+  grid-area: settings;
 }
 
 .grid-container {
   height: 100vh;
   display: grid;
-  grid-template-rows: 0.6fr 1fr 5fr 60px;
-  grid-template-columns: 1.7fr 8fr 75px;
+  grid-template-rows: 0.6fr 0.6fr 0.6fr 0.6fr 6fr;
+  grid-template-columns: 0.5fr 10fr; 
   grid-template-areas:
-    "logo movies profile"
-    "logo movies menu"
-    "friend-list movies menu"
-    "friend-search movie-search menu";
+    "logo profile-details"
+    "profile profile-details"
+    "search profile-details"
+    "settings movies"
+    "empty movies";
   gap: 2px;
   background-color: #000000;
 }
