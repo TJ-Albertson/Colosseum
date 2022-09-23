@@ -1,19 +1,99 @@
 <div class="grid-container">
-  <div class="logo">logo</div>
-  <div class="profile-details">
-    <%= image_tag "default_picture.jpg", size: "100x100" %>
-    Profile
-    <div class="profile-search">Search</div>
-  </div>
-  <div class="movies">
-    <% @thumbs.each do |thumb| %>
-      <div>
-        <%= thumb.tmdbId %>
-      </div>
+  <main>
+    <div class="profile-details">
+      <%= image_tag "default_picture.jpg", class: "profile-pic" %> Profile
+      <div class="profile-search">Search</div>
+    </div>
+
+    <%= form_tag(thumbs_path, method: :get) do %>
+      <%= text_field_tag(:search, params[:search]) %>
+      <%= submit_tag ("Search") %>
     <% end %>
-  </div>
-  <div class="search"><%= show_svg('search.svg') %></div>
-  <div class="profile">pr</div>
-  <div class="settings"><%= show_svg('gear.svg') %></div>
-  <div class="empty"></div>
+
+    <div class="movies">
+      <% @thumbs.each do |thumb| %>
+      <div><%= thumb.tmdbId %></div>
+      <% end %>
+    </div>
+  </main>
+
+  <nav class="navbar">
+    <ul class="navbar-nav">
+      <li class="logo">
+        <a href="#" class="nav-link">
+          
+          <svg
+            aria-hidden="true"
+            focusable="false"
+            data-prefix="fad"
+            data-icon="angle-double-right"
+            role="img"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 448 512"
+            class="svg-inline--fa fa-angle-double-right fa-w-14 fa-5x"
+          >
+            <g class="fa-group">
+              <path
+                fill="currentColor"
+                d="M224 273L88.37 409a23.78 23.78 0 0 1-33.8 0L32 386.36a23.94 23.94 0 0 1 0-33.89l96.13-96.37L32 159.73a23.94 23.94 0 0 1 0-33.89l22.44-22.79a23.78 23.78 0 0 1 33.8 0L223.88 239a23.94 23.94 0 0 1 .1 34z"
+                class="fa-secondary"
+              ></path>
+              <path
+                fill="currentColor"
+                d="M415.89 273L280.34 409a23.77 23.77 0 0 1-33.79 0L224 386.26a23.94 23.94 0 0 1 0-33.89L320.11 256l-96-96.47a23.94 23.94 0 0 1 0-33.89l22.52-22.59a23.77 23.77 0 0 1 33.79 0L416 239a24 24 0 0 1-.11 34z"
+                class="fa-primary"
+              ></path>
+            </g>
+          </svg>
+          <span class="link-text logo-text">Colosseum</span>
+        </a>
+        
+      </li>
+
+      <li class="nav-item">
+        <a href="#" class="nav-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <g class="fa-group">
+              <path
+                fill="currentColor"
+                class="fa-secondary"
+                d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0S96 57.3 96 128s57.3 128 128 128zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"
+              />
+            </g>
+          </svg>
+          <span class="link-text">Username</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a href="#" class="nav-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <g class="fa-group">
+              <path
+                fill="currentColor"
+                class="fa-secondary"
+                d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"
+              />
+            </g>
+          </svg>
+          <span class="link-text">Search</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a href="#" class="nav-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <g class="fa-group">
+              <path
+                fill="currentColor"
+                class="fa-secondary"
+                d="M96 96c-17.7 0-32 14.3-32 32s-14.3 32-32 32s-32-14.3-32-32C0 75 43 32 96 32h97c70.1 0 127 56.9 127 127c0 52.4-32.2 99.4-81 118.4l-63 24.5 0 18.1c0 17.7-14.3 32-32 32s-32-14.3-32-32V301.9c0-26.4 16.2-50.1 40.8-59.6l63-24.5C240 208.3 256 185 256 159c0-34.8-28.2-63-63-63H96zm48 384c-22.1 0-40-17.9-40-40s17.9-40 40-40s40 17.9 40 40s-17.9 40-40 40z"
+              />
+            </g>
+          </svg>
+          <span class="link-text">Info</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
 </div>
