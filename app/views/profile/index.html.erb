@@ -1,18 +1,18 @@
 <div class="grid-container">
   <main>
     <div class="profile-details">
-      <%= image_tag "default_picture.jpg", class: "profile-pic" %> Profile
+      <%= image_tag "default_picture.jpg", class: "profile-pic" %> username
       <div class="profile-search">Search</div>
     </div>
 
-    <%= form_tag(thumbs_path, method: :get) do %>
-      <%= text_field_tag(:search, params[:search]) %>
-      <%= submit_tag ("Search") %>
-    <% end %>
-
     <div class="movies">
       <% @thumbs.each do |thumb| %>
-      <div><%= thumb.tmdbId %></div>
+        <div>
+          <%= thumb.name %>
+          <%= form_with model: @thumb do |form|%>
+            <%= form.button :thumb %>
+          <% end %>
+        </div>
       <% end %>
     </div>
   </main>
@@ -49,7 +49,8 @@
         </a>
         
       </li>
-
+      
+      <% if true %>
       <li class="nav-item">
         <a href="#" class="nav-link">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -64,6 +65,22 @@
           <span class="link-text">Username</span>
         </a>
       </li>
+      <% else %>
+      <li class="nav-item">
+        <a href="#" class="nav-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <g class="fa-group">
+              <path
+                fill="currentColor"
+                class="fa-secondary"
+                d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0S96 57.3 96 128s57.3 128 128 128zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"
+              />
+            </g>
+          </svg>
+          <span class="link-text">Username</span>
+        </a>
+      </li>
+      <% end %>
 
       <li class="nav-item">
         <a href="#" class="nav-link">

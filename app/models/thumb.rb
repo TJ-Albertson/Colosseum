@@ -1,5 +1,8 @@
 class Thumb < ApplicationRecord
-    validates :tmdbId, :userId, :thumb
+    validates :name, presence: true
+    validates :tmdbId, presence: true
+    validates :userId, presence: true
+    validates :thumb, presence: true
 
     def self.search(search)
         if search  
@@ -13,5 +16,5 @@ class Thumb < ApplicationRecord
                 @thumbs = Thumb.all
             end
         end
-        
+
 end

@@ -14,6 +14,14 @@
  *= require_self
  */
 
+.movies {
+  grid-area: movies;
+  overflow-y: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 .profile-pic {
   width: 100px;
   height: 100px;
@@ -21,13 +29,39 @@
 }
 
 .profile-search {
-  border-style: solid;
+  border-style: none none solid;
   margin-top: 15px;
   width: 45%;
 }
+
 .movies {
+  margin-top: 100px;
   overflow-y: auto;
+  height: 700px;
+  margin-left: 415px;
+  width: 60%;
 }
+
+.movies::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+.movies::-webkit-scrollbar-track {
+  background: #1e1e24;
+}
+
+.movies::-webkit-scrollbar-thumb {
+  background: #6649b8;
+}
+
+.movies > div {
+  height: 200px;
+  width: 80%;
+  border-style: solid;
+  margin: 15px;
+  flex-shrink: 0;
+}
+
 .profile-details {
   display: flex;
   align-items: center;
@@ -52,7 +86,7 @@ body {
 }
 
 body::-webkit-scrollbar {
-  width: 0.25rem;
+  width: 0.5rem;
 }
 
 body::-webkit-scrollbar-track {
@@ -64,8 +98,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 main {
-  margin-left: 5rem;
-  padding: 1rem;
+  text-align: center;
 }
 
 .navbar {
