@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root "profile#index"
 
   get "/search", to: "search#index"
-
-  resources :thumbs
+  get "/profile", to: "user#profile"
+  get "/users", to: "user#search"
 
 end
