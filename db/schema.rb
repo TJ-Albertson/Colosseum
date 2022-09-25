@@ -19,7 +19,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_23_210309) do
   end
 
   create_table "thumbs", force: :cascade do |t|
-    t.string "name"
     t.string "tmdbId"
     t.string "userId"
     t.integer "thumb"

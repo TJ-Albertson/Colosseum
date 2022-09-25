@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   # root "articles#index"
   root "profile#index"
 
+  get "/search", to: "search#index"
+
   resources :thumbs
 
 end
