@@ -50,6 +50,7 @@
 
 .movie {
   display: flex;
+  flex: 1 1 auto;
   height: 200px;
   width: 80%;
   border-style: solid;
@@ -58,6 +59,11 @@
   color: var(--text-primary);
   gap: 10px;
   padding: 10px;
+}
+
+.movie-poster {
+  height: 200px;
+  width: 133px;
 }
 
 .movie-details {
@@ -78,6 +84,8 @@
 
 .description {
   grid-area: description;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .thumbs {
