@@ -14,10 +14,25 @@
  *= require_self
  */
 
+:root {
+  font-size: 16px;
+  font-family: "Open Sans";
+  --text-primary: #b6b6b6;
+  --text-secondary: #ececec;
+  --bg-primary: #23232e;
+  --bg-secondary: #141418;
+  --transition-speed: 600ms;
+}
+
+.flex-horizontal {
+  display: flex;
+}
+
 .flex-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 10px;
 }
 
 .movies {
@@ -26,6 +41,47 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+
+  margin-top: 100px;
+  overflow-y: auto;
+  height: 700px;
+  width: 70%;
+}
+
+.movie {
+  display: flex;
+  height: 200px;
+  width: 80%;
+  border-style: solid;
+  margin: 15px;
+  flex-shrink: 0;
+  color: var(--text-primary);
+  gap: 10px;
+  padding: 10px;
+}
+
+.movie-details {
+  text-align: left;
+}
+
+.title {
+  grid-area: title;
+}
+
+.year {
+  grid-area: year;
+}
+
+.director {
+  grid-area: director;
+}
+
+.description {
+  grid-area: description;
+}
+
+.thumbs {
+  display: flex;
 }
 
 .profile-pic {
@@ -40,14 +96,6 @@
   width: 45%;
 }
 
-.movies {
-  margin-top: 100px;
-  overflow-y: auto;
-  height: 700px;
-  margin-left: 415px;
-  width: 60%;
-}
-
 .movies::-webkit-scrollbar {
   width: 0.5rem;
 }
@@ -60,32 +108,14 @@
   background: #6649b8;
 }
 
-.movies > div {
-  height: 200px;
-  width: 80%;
-  border-style: solid;
-  margin: 15px;
-  flex-shrink: 0;
-}
-
 .profile-details {
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
-:root {
-  font-size: 16px;
-  font-family: 'Open Sans';
-  --text-primary: #b6b6b6;
-  --text-secondary: #ececec;
-  --bg-primary: #23232e;
-  --bg-secondary: #141418;
-  --transition-speed: 600ms;
-}
-
 body {
-  color: black;
+  color: var(--text-primary);
   background-color: white;
   margin: 0;
   padding: 0;
@@ -101,6 +131,10 @@ body::-webkit-scrollbar-track {
 
 body::-webkit-scrollbar-thumb {
   background: #6649b8;
+}
+
+body {
+  background-color: #1b1b24;
 }
 
 main {
@@ -189,8 +223,7 @@ main {
   transition: var(--transition-speed);
 }
 
-.logo-text
-{
+.logo-text {
   display: inline;
   position: absolute;
   left: -999px;
@@ -242,13 +275,11 @@ main {
     display: inline;
   }
 
-  .navbar:hover .logo svg
-  {
+  .navbar:hover .logo svg {
     margin-left: 11rem;
   }
 
-  .navbar:hover .logo-text
-  {
+  .navbar:hover .logo-text {
     left: 0px;
   }
 }

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root "movies#search"
 
   get "/movies", to: "movies#search"
-  get "/profile", to: "users#profile"
+  get "/profile", to: "users#show"
   get "/users", to: "users#search"
 
   get '/signup', to: 'users#new', as: 'signup'

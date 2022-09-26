@@ -1,5 +1,6 @@
 <main>
     <div class="flex-container">
+
         <div class="profile-search">
             <%= form_with url: "/movies", method: :get do |form| %>
                 <%= form.label :query, "Search for Movies:" %>
@@ -15,9 +16,9 @@
                         <img src="#" alt="Movie Thumbnail" />
                         <div class="movie-details" >
                             <p class="title"><%= movie["title"] %></p>
-                            <p class="year"><%= movie["release_date"] %></p>
+                            <p class="year"><%= movie["year"] %></p>
                             <p class="director"><%= movie["director"] %></p>
-                            <p class="description"><%= movie["overview"] %></p>
+                            <p class="description"><%= movie["description"] %></p>
                         </div>
                         <div class="thumbs" >
                             <img src="#" alt="Thumb Up" />
@@ -31,5 +32,3 @@
           
     </div>
 </main>
-
-<%= render "shared/menu" %>
