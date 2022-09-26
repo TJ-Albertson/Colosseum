@@ -1,7 +1,7 @@
 <main>
     <div class="flex-container">
         <div class="profile-search">
-            <%= form_with url: "/search", method: :get do |form| %>
+            <%= form_with url: "/movies", method: :get do |form| %>
                 <%= form.label :query, "Search for Movies:" %>
                 <%= form.text_field :query %>
                 <%= form.submit "Search" %>
@@ -56,7 +56,7 @@
       
       <% if true %>
       <li class="nav-item">
-        <a href="/" class="nav-link">
+        <a href="/login" class="nav-link">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
             <g class="fa-group">
               <path
@@ -71,7 +71,7 @@
       </li>
       <% else %>
       <li class="nav-item">
-        <a href="/" class="nav-link">
+        <a href="/profile" class="nav-link">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
             <g class="fa-group">
               <path
@@ -88,7 +88,7 @@
 
 
       <li class="nav-item">
-        <a href="/search" class="nav-link">
+        <a href="/movies" class="nav-link">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
             <g class="fa-group">
               <path

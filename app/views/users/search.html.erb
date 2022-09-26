@@ -1,23 +1,28 @@
-<div class="grid-container">
-  <main>
-    <div class="profile-details">
-      <%= image_tag "default_picture.jpg", class: "profile-pic" %> username
-      <div class="profile-search">Search</div>
-    </div>
-
-    <div class="movies">
-      <% @thumbs.each do |thumb| %>
-        <div>
-          <%= thumb.name %>
-          <%= form_with model: @thumb do |form|%>
-            <%= form.button :thumb %>
-          <% end %>
+<main>
+    <div class="flex-container">
+        <div class="profile-search">
+            <%= form_with url: "/users", method: :get do |form| %>
+                <%= form.label :query, "Search for Users:" %>
+                <%= form.text_field :query %>
+                <%= form.submit "Search" %>
+            <% end %>
         </div>
-      <% end %>
-    </div>
-  </main>
 
-  <nav class="navbar">
+        <ul>
+            <% if @users %>
+                <% @users.each do |movie| %>
+                    <li>
+                        <a href="<%= user_path(user) %>">
+                        <%= users.username %>
+                    <li>
+                <% end %>
+            <% end %>
+        </ul>
+          
+    </div>
+</main>
+
+<nav class="navbar">
     <ul class="navbar-nav">
       <li class="logo">
         <a href="#" class="nav-link">
@@ -52,7 +57,7 @@
       
       <% if true %>
       <li class="nav-item">
-        <a href="/" class="nav-link">
+        <a href="/login" class="nav-link">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
             <g class="fa-group">
               <path
@@ -67,7 +72,7 @@
       </li>
       <% else %>
       <li class="nav-item">
-        <a href="/" class="nav-link">
+        <a href="/profile" class="nav-link">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
             <g class="fa-group">
               <path
@@ -84,7 +89,7 @@
 
 
       <li class="nav-item">
-        <a href="/search" class="nav-link">
+        <a href="/movies" class="nav-link">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
             <g class="fa-group">
               <path
@@ -129,4 +134,3 @@
       </li>
     </ul>
   </nav>
-</div>

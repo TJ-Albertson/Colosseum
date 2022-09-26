@@ -76,3 +76,5 @@ end
 gem "httparty", "~> 0.20.0"
 
 gem "dotenv", "~> 2.8"
+
+gem "bcrypt", "~> 3.1"
