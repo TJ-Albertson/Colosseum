@@ -1,5 +1,5 @@
 class ThumbsController < ApplicationController
-    def index
+    def show
         @thumb = Thumb.where(userId: params[:userId], tmdbId: params[:tmdbId])
     end
 

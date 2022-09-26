@@ -18,11 +18,26 @@
                             <p class="year"><%= movie["release_date"] %></p>
                             <p class="description"><%= movie["overview"] %></p>
                         </div>
-                        <div class="thumbs" >
-                          <%= button_to "Thumb Up" %>
-                          <%= button_to "@" %>
-                          <%= button_to "Thumb Down" %>
-                        </div>
+
+
+                        <% 
+                            thumb_path,
+                        %>
+
+                        <% if logged_in? %>
+                            <div>
+                                <%= button_to "Thumb Up" %>
+                                <%= button_to "@" %>
+                                <%= button_to "Thumb Down" %>
+                            </div>
+                        <% else %>
+                            <div>
+                                <%= button_to "Thumb Up" %>
+                                <%= button_to "@" %>
+                                <%= button_to "Thumb Down" %>
+                            </div>
+                        <% end %>
+                        
                     </div>  
                 <% end %>
             <% end %>
