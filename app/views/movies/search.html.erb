@@ -19,17 +19,20 @@
                             <p class="description"><%= movie["overview"] %></p>
                         </div>
 
-
-                        <% 
-                            thumb_path,
-                        %>
+                        <% thumb = @thumbs.where(tmdbId: movie["id"], userId: current_user.id) %>
+                        <% if thumb.length > 0 %> 
+                        <% thumb %>
+                        <%else%>
+                        0
+                        <%end%>
 
                         <% if logged_in? %>
-                            <div>
-                                <%= button_to "Thumb Up" %>
-                                <%= button_to "@" %>
-                                <%= button_to "Thumb Down" %>
-                            </div>
+                            
+                                <div>
+                                    <%= button_to "Thumb Up", thumbs_path, params: { tmdbId: movie["id"], userId: current_user.id, value: 1 } %>
+                                    <%= button_to "@" %>
+                                    <%= button_to "Thumb Down", thumbs_path, params: { tmdbId: movie["id"], userId: current_user.id, value: 0 } %>
+                                </div>
                         <% else %>
                             <div>
                                 <%= button_to "Thumb Up" %>

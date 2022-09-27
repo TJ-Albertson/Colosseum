@@ -3,6 +3,10 @@ class ThumbsController < ApplicationController
         @thumb = Thumb.where(userId: params[:userId], tmdbId: params[:tmdbId])
     end
 
+    def new
+      @thumb = Thumb.new
+    end
+
     def create
         @thumb = Thumb.new(thumb_params)
         if @thumb.save
@@ -17,11 +21,7 @@ class ThumbsController < ApplicationController
 
     private
     def thumb_params
-      params.require(:tmdbId, :userId, :thumb)
-    end
-
-    def thumb_update_params
-        params.require(:thumb)
+      params.permit(:tmdbId, :userId, :value)
     end
 
   end
