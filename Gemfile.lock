@@ -93,6 +93,7 @@ GEM
     dotenv-rails (2.8.1)
       dotenv (= 2.8.1)
       railties (>= 3.2)
+    erb-formatter (0.3.0)
     erubi (1.11.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
@@ -232,6 +233,7 @@ DEPENDENCIES
   debug
   dotenv (~> 2.8)
   dotenv-rails
+  erb-formatter (~> 0.3.0)
   httparty (~> 0.20.0)
   importmap-rails
   jbuilder

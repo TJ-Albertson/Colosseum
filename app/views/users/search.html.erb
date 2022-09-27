@@ -2,7 +2,7 @@
     <div class="flex-container">
         <div class="profile-search">
             <%= form_with url: "/users", method: :get do |form| %>
-                <%= form.label :query, "Search for Users:" %>
+                <%= form.label :query, "Search for:" %>
                 <%= form.text_field :query %>
                 <%= form.submit "Search" %>
             <% end %>
@@ -13,7 +13,7 @@
                 <% @users.each do |user| %>
                     <li>
                         <a href="<%= user_path(user) %>">
-                        <%= user %>
+                        <%= user.username %>
                     <li>
                 <% end %>
             <% end %>

@@ -19,15 +19,21 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(session[:user_id])
-    @thumbs = Thumb.where(userId: session[:user_id])
+    @id = params[:id]
+    @user = User.find(params[:id])
+
+    if params[:query].blank?
+      @thumbs = Thumb.where(userId: params[:id])
+    else
+      @thumbs = Thumb.where("lower(name) LIKE :query", query: "%#{params[:query].downcase}%", id: params[:id])
+    end
   end
 
   def search
-    @users = User.where("name like ?", params[:query])
-    if @users
-    else
+    if params[:query].blank?
       @users = User.all
+    else
+      @users = User.where("lower(username) LIKE :query", query: "%#{params[:query].downcase}%")
     end
   end 
 
