@@ -15,6 +15,10 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(session[:user_id])
+    @thumbs = Thumb.where(userId: session[:user_id])
+
+    movie_object = Movie.new(params[:query])
+    @movies = movie_object.get_movie()
   end
 
   private

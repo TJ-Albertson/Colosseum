@@ -14,5 +14,9 @@ class Movie
         response["results"]
     end
 
+    def get_movie
+        response = HTTParty.get('https://api.themoviedb.org/3/movie/' + @movie + '?api_key=' + ENV["TMDB_API_KEY"] + '&language=en-US')
+    end
+
 end
   
