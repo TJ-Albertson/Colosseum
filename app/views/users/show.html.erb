@@ -1,5 +1,6 @@
-<div class="grid-container">
+
   <main>
+  <div class="flex-container">
     <div class="profile-details">
       <%= image_tag "default_picture.jpg", class: "profile-pic" %> 
       <%= @user.username %>
@@ -70,7 +71,8 @@
         <% end %>
       <% end %>
     </div>
+    </div>
   </main>
-</div>
+
 
 <%= render "shared/menu" %>

@@ -13,13 +13,23 @@ class UsersController < ApplicationController
     end
   end
 
-  def show
-    @user = User.find(session[:user_id])
-    @thumbs = Thumb.where(userId: session[:user_id])
-
+  def movie
     movie_object = Movie.new(params[:query])
     @movies = movie_object.get_movie()
   end
+
+  def show
+    @user = User.find(session[:user_id])
+    @thumbs = Thumb.where(userId: session[:user_id])
+  end
+
+  def search
+    @users = User.where("name like ?", params[:query])
+    if @users
+    else
+      @users = User.all
+    end
+  end 
 
   private
 
