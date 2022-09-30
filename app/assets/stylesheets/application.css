@@ -43,29 +43,33 @@
   flex-direction: column;
   margin-top: 100px;
   overflow-y: auto;
-  height: 800px;
-  width: 70%;
+  position: absolute;
+  bottom: 0;
+  width: 75%;
+  height: 900px;
 }
 
 .movie {
   display: grid;
-  grid-template-columns: auto 2fr 1fr;
+  grid-template-columns: auto 1.5fr;
   grid-template-areas: 
     "movie-poster movie-details thumbs";
   height: 200px;
   width: 80%;
-  border-style: solid;
-  margin: 15px;
+  border: 1px, solid, #6E2C00;
+  margin: 1em;
   flex-shrink: 0;
   color: var(--text-primary);
-  gap: 10px;
-  padding: 10px;
+  gap: 1em;
+  padding: 1em;
+  background-color: #23232e;
 }
 
 .movie-poster {
   grid-area: movie-poster;
   height: 200px;
   width: 133px;
+  border-style: solid;
 }
 
 .movie-details {
