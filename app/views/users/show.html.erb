@@ -2,15 +2,15 @@
   <div class="flex-container">
     <div class="profile-details">
       <%= image_tag "default_picture.jpg", class: "profile-pic" %>
-      <%= @user.username %>
-      <div class="profile-search">
+      <h1><%= @user.username %></h1>
+    </div>
+    <div class="profile-search">
         <%= form_with url: "/show", method: :get do |form| %>
           <%= form.label :query, "Search:" %>
           <%= form.text_field :query %>
           <%= form.submit "Search" %>
         <% end %>
       </div>
-    </div>
 
     <div class="movies">
       <% if @thumbs %>
@@ -27,14 +27,16 @@
 
             <div class="thumbs">
 
-            <% thumbSize = 84 %>
-            <% thumbUpColor = "green" %>
-            <% thumbDownColor = "red" %>
+              <% thumbSize = 84 %>
+              <% thumbUpColor = "green" %>
+              <% thumbDownColor = "red" %>
 
-            <% circleSize = 32 %>
-            <% circleColor = "orange" %>
+              <% circleSize = 32 %>
+              <% circleColor = "orange" %>
 
-              <% if current_user.id == @id %>
+
+
+              <% if current_user && current_user.id == @id %>
                 <% if thumb.value == 1 %>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
