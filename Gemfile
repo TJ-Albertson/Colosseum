@@ -80,3 +80,5 @@ gem "dotenv", "~> 2.8"
 gem "bcrypt", "~> 3.1"
 
 gem "erb-formatter", "~> 0.3.0"
+
+gem "font-awesome-sass", "~> 6.2.0"

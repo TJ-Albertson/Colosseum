@@ -95,6 +95,9 @@ GEM
       railties (>= 3.2)
     erb-formatter (0.3.0)
     erubi (1.11.0)
+    ffi (1.15.5)
+    font-awesome-sass (6.2.0)
+      sassc (~> 2.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
     httparty (0.20.0)
@@ -182,6 +185,8 @@ GEM
       io-console (~> 0.5)
     rexml (3.2.5)
     rubyzip (2.3.2)
+    sassc (2.4.0)
+      ffi (~> 1.9)
     selenium-webdriver (4.4.0)
       childprocess (>= 0.5, < 5.0)
       rexml (~> 3.2, >= 3.2.5)
@@ -234,6 +239,7 @@ DEPENDENCIES
   dotenv (~> 2.8)
   dotenv-rails
   erb-formatter (~> 0.3.0)
+  font-awesome-sass (~> 6.2.0)
   httparty (~> 0.20.0)
   importmap-rails
   jbuilder

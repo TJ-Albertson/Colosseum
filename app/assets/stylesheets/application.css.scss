@@ -14,6 +14,8 @@
  *= require_self
  */
 
+ @import "font-awesome";
+
 :root {
   font-size: 16px;
   font-family: "Open Sans";
@@ -108,13 +110,29 @@
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  margin: 3em 0 0 0;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-pic > i {
+  font-size: 1.5em;
+  color: black;
 }
 
 .profile-search {
   border-style: none none solid;
   margin-top: 15px;
   width: 45%;
+  padding-bottom: 2em;
+}
+
+.profile-details {
+  display: flex;
+  align-items: center;
+  margin-top: 2em;
+  font-size: 2em;
 }
 
 .movies::-webkit-scrollbar {
@@ -127,12 +145,6 @@
 
 .movies::-webkit-scrollbar-thumb {
   background: #df9949;
-}
-
-.profile-details {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
 }
 
 body {
