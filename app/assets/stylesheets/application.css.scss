@@ -35,6 +35,12 @@
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  max-height: 100vh;
+}
+
+.flex-users {
+  align-items: flex-start;
+  flex-direction: column;
 }
 
 .movies {
@@ -43,12 +49,10 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-top: 100px;
+
   overflow-y: auto;
-  position: absolute;
-  bottom: 0;
+  max-height: 100%;
   width: 75%;
-  height: 900px;
 }
 
 .movie {
@@ -110,10 +114,14 @@
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background-color: red;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+#profile-pic-search {
+  width: 75px;
+  height: 75px;
 }
 
 .profile-pic > i {
@@ -128,11 +136,74 @@
   padding-bottom: 2em;
 }
 
+#search-title {
+  border-bottom: solid;
+  padding: 0.5em;
+}
+
+.search {
+  padding-left: 2.5em;
+  width: 60%;
+  font-size: 2em;
+}
+
+.search > form > input {
+  text-align: center;
+  border-style: none none solid;
+  border-color: var(--text-primary);
+  font-size: 1em;
+  height: 2em;
+  color: var(--text-primary);
+  background: none;
+}
+
+.search > form > input::nth-of-type(2) {
+  background-color: var(--text-primary);
+}
+
+.search > form > input#search {
+  font-family: "Open Sans";
+  color: var(--text-primary);
+  border: solid;
+  border-color: var(--text-primary);
+  border-radius: 10px;
+  transition: 0.4s ease-in-out;
+  transform: translate(0, 9px)
+}
+
+.search > form > input#search:hover {
+  color: var(--text-secondary);
+  border-color: var(--text-secondary);
+  transform: translate(0, 3px)
+}
+
+.search > form > input#query {
+  font-size: 1.3em;
+  font-weight: bold;
+  font-family: "Open Sans";
+  margin: 0.3em;
+}
+
+.search > form > input#query:focus-visible {
+  outline: none;
+}
+
 .profile-details {
   display: flex;
   align-items: center;
   margin-top: 2em;
   font-size: 2em;
+  transition: 0.2s ease-in-out;
+}
+
+#profile-details-search {
+  justify-content: flex-start;
+  margin: 0;
+  font-size: 1.5em;
+}
+
+#profile-details-search:hover {
+  transform: scale(1.15);
 }
 
 .movies::-webkit-scrollbar {

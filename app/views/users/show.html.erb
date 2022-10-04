@@ -6,7 +6,7 @@
       </div>
       <h1>&nbsp;<%= @user.username %></h1>
     </div>
-    
+
     <div class="profile-search">
       <%= form_with url: "/show", method: :get do |form| %>
         <%= form.label :query, "Search:" %>
