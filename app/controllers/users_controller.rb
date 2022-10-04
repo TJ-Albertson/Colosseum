@@ -6,6 +6,8 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
     if @user.valid?
+      @user.picture = rand(14)
+      @user.background = rand(4) 
       @user.save
       redirect_to @user
     else  
