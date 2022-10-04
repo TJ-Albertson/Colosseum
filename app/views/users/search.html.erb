@@ -3,11 +3,11 @@
     <h1 id="search-title"><i class="fa-solid fa-users"></i>&nbsp; Users</h1>
     <div class="search">
       <%= form_with url: "/users", method: :get do |form| %>
-        <%= form.text_field :query %>
+        <%= form.text_field :query, value: params[:query] %>
         <%= form.submit "Search", id: "search" %>
       <% end %>
     </div>
-    
+
     <div class="flex-users">
       <% if @users %>
         <% @users.each do |user| %>
