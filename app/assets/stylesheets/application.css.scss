@@ -35,6 +35,7 @@
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  max-height: 100vh;
 }
 
 .flex-users {
@@ -48,12 +49,10 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-top: 100px;
+
   overflow-y: auto;
-  position: absolute;
-  bottom: 0;
+  max-height: 100%;
   width: 75%;
-  height: 900px;
 }
 
 .movie {
@@ -169,13 +168,13 @@
   border-color: var(--text-primary);
   border-radius: 10px;
   transition: 0.4s ease-in-out;
-  transform: translate(0, 5px)
+  transform: translate(0, 9px)
 }
 
 .search > form > input#search:hover {
   color: var(--text-secondary);
   border-color: var(--text-secondary);
-  transform: translate(0, -5px)
+  transform: translate(0, 3px)
 }
 
 .search > form > input#query {

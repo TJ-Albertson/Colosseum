@@ -1,28 +1,33 @@
 <main>
-    <div class="flex-container" id="flex-users">
+  <div class="flex-container" id="flex-users">
     <h1 id="search-title"><i class="fa-solid fa-users"></i>&nbsp; Users</h1>
     <div class="search">
-        <%= form_with url: "/users", method: :get do |form| %>
-            <%= form.text_field :query %>
-            <%= form.submit "Search", id: "search" %>
-        <% end %>
-        </div>
-    <div class="flex-users">
-        <% if @users %>
-            <% @users.each do |user| %>
-                <div class="profile-details" id="profile-details-search">
-                    <div class="profile-pic" id="profile-pic-search" style="background-color:<%= @colors[user.background] %>">
-                        <i class="<%= @icons[user.picture] %>"></i>
-                    </div>
-                    &nbsp;&nbsp;
-                    <a href="<%= user_path(user) %>">
-                        <h1><%= user.username %></h1>
-                    </a>
-                </div>
-            <% end %>
-        <% end %>
-        </div>
+      <%= form_with url: "/users", method: :get do |form| %>
+        <%= form.text_field :query %>
+        <%= form.submit "Search", id: "search" %>
+      <% end %>
     </div>
+    
+    <div class="flex-users">
+      <% if @users %>
+        <% @users.each do |user| %>
+          <div class="profile-details" id="profile-details-search">
+            <div
+              class="profile-pic"
+              id="profile-pic-search"
+              style="background-color:<%= @colors[user.background] %>"
+            >
+              <i class="<%= @icons[user.picture] %>"></i>
+            </div>
+            &nbsp;&nbsp;
+            <a href="<%= user_path(user) %>">
+              <h1><%= user.username %></h1>
+            </a>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 </main>
 
 <%= render "shared/menu" %>
