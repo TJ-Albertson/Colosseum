@@ -3,7 +3,6 @@ class MoviesController < ApplicationController
       movie_object = Movie.new(params[:query])
       @movies = (@movie || movie_object.get_movies())
       @thumbs = Thumb.all
-      @scroll = 0
     end
 
   end

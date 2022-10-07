@@ -1,5 +1,4 @@
 // Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
-import "@hotwired/turbo-rails"
 import "controllers"
 
 function dislikeClick() {
@@ -39,8 +38,6 @@ function dislikeClick() {
       this.querySelector("i").style.color="green"
     }
   }
-  
-  
   
   const getLike = document.querySelectorAll(".like-button")
   
