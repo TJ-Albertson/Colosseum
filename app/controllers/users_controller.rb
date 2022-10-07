@@ -9,9 +9,11 @@ class UsersController < ApplicationController
       @user.picture = rand(14)
       @user.background = rand(4) 
       @user.save
-      redirect_to login_path
-    else  
-      redirect :new
+      session[:user_id] = @user.id
+      redirect_to @user
+    else
+      redirect_to signup_path
+      flash.alert = "Username is taken"
     end
   end
 

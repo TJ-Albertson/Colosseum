@@ -23,7 +23,7 @@
               <% if logged_in? %>
                 <% thumb = @thumbs.where(tmdbId: movie["id"], userId: current_user.id) %>
                 <div class="like-button">
-                  <%= button_to thumbs_path, params: { tmdbId: movie["id"], userId: current_user.id, value: 1 } do %>
+                  <%= button_to thumbs_path, params: { tmdbId: movie["id"], userId: current_user.id, value: 1 }, id: "thumb-button" do %>
                     <i
                       class="fa-solid fa-thumbs-up"
                       style="<%= thumb.length > 0 && thumb[0].value == 1 ? "color:green" : "color:grey" %>"
@@ -31,7 +31,7 @@
                   <% end %>
                 </div>
                 <div class="dislike-button">
-                  <%= button_to thumbs_path, params: { tmdbId: movie["id"], userId: current_user.id, value: 0 } do %>
+                  <%= button_to thumbs_path, params: { tmdbId: movie["id"], userId: current_user.id, value: 0 }, id: "thumb-button" do %>
                     <i
                       class="fa-solid fa-thumbs-down"
                       style="<%= thumb.length > 0 && thumb[0].value == 0 ? "color:red" : "color:grey" %>"
@@ -40,11 +40,11 @@
                 </div>
 
               <% else %>
-                <%= button_to sessions_path do %>
-                  <i class="fa-solid fa-thumbs-up"></i>
+                <%= button_to sessions_path, id: "thumb-button" do %>
+                  <i class="fa-solid fa-thumbs-up" style="color:grey"></i>
                 <% end %>
-                <%= button_to sessions_path do %>
-                  <i class="fa-solid fa-thumbs-down"></i>
+                <%= button_to sessions_path, id: "thumb-button" do %>
+                  <i class="fa-solid fa-thumbs-down" style="color:grey" ></i>
                 <% end %>
               <% end %>
             </div>

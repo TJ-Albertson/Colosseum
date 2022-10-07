@@ -87,20 +87,29 @@
   grid-area: year;
 }
 
-.director {
+.liked {
   grid-area: director;
 }
 
-.thumb {
+
+#thumb-button {
+  font-size: 4em;
   background: none;
   border: none;
   transition: 0.4s ease-in-out;
 }
 
-.thumb:hover {
-  transform: scale(1.2);
+#thumb-button-disabled {
+  font-size: 4em;
+  background: none;
+  border: none;
+  margin-left: 0.1em;
+  margin-right: 0.1em;
 }
 
+#thumb-button:hover {
+  transform: scale(1.2);
+}
 
 #green:hover > svg > path {
   fill: #3498db;
@@ -361,6 +370,28 @@ a {
   left: -999px;
   transition: var(--transition-speed);
   margin-left: 3.7rem;
+}
+
+#info {
+  gap: 1rem;
+  margin: 1rem;
+  
+}
+
+#info-header {
+  font-size: 1.7rem;
+  font-weight: bold;
+  gap: 1rem;
+} 
+
+#header-text {
+  padding-bottom: 0px;
+  border-bottom: 5px solid #df9949
+}
+
+#tmdb {
+  gap: 1rem;
+  text-align: left;
 }
 
 /* Small screens */
