@@ -44,6 +44,7 @@
                   <% else %>
                     <%= button_to thumbs_path, params: { tmdbId: movie["id"], userId: current_user.id, value: 1 }, class: "thumb", id: "green" do %>
                       <svg
+                        onclick="this.firstElementChild.style.fill='green'"
                         xmlns="http://www.w3.org/2000/svg"
                         width="<%= thumbSize %>"
                         height="<%= thumbSize %>"

@@ -14,7 +14,7 @@
  *= require_self
  */
 
- @import "font-awesome";
+@import "font-awesome";
 
 :root {
   font-size: 16px;
@@ -38,8 +38,6 @@
   max-height: 100vh;
 }
 
-
-
 .movies {
   grid-area: movies;
   overflow-y: auto;
@@ -55,11 +53,10 @@
 .movie {
   display: grid;
   grid-template-columns: auto 1.5fr;
-  grid-template-areas: 
-    "movie-poster movie-details thumbs";
+  grid-template-areas: "movie-poster movie-details thumbs";
   height: 200px;
   width: 80%;
-  border: 1px, solid, #6E2C00;
+  border: 1px, solid, #6e2c00;
   margin: 1em;
   flex-shrink: 0;
   color: var(--text-primary);
@@ -104,13 +101,19 @@
   transform: scale(1.2);
 }
 
+.thumb:visited {
+  background-color: #3498db;
+}
+
 #green:hover > svg > path {
-  fill: #3498DB;
+  fill: #3498db;
 }
 
 #red:hover > svg > path {
-  fill: #3498DB;
+  fill: #3498db;
 }
+
+
 
 .description {
   grid-area: description;
@@ -154,6 +157,7 @@
 #search-title {
   border-bottom: solid;
   padding: 0.5em;
+  margin-bottom: 0;
 }
 
 .search {
@@ -183,13 +187,13 @@
   border-color: var(--text-primary);
   border-radius: 10px;
   transition: 0.4s ease-in-out;
-  transform: translate(0, 9px)
+  transform: translate(0, 9px);
 }
 
 .search > form > input#search:hover {
   color: var(--text-secondary);
   border-color: var(--text-secondary);
-  transform: translate(0, 3px)
+  transform: translate(0, 3px);
 }
 
 .search > form > input#query {
@@ -226,7 +230,7 @@
   align-items: center;
   margin-top: 2em;
   font-size: 2em;
-  transition: 0.2s ease-in-out; 
+  transition: 0.2s ease-in-out;
 }
 
 #profile-details-search {
@@ -290,7 +294,7 @@ main {
 }
 
 a {
-  color: #ffd07e
+  color: #ffd07e;
 }
 
 .nav-item:last-child {
@@ -360,10 +364,6 @@ a {
   left: -999px;
   transition: var(--transition-speed);
   margin-left: 3.7rem;
-}
-
-.navbar:hover .logo svg {
-  
 }
 
 /* Small screens */

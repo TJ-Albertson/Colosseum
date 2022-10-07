@@ -7,14 +7,6 @@
       <h1>&nbsp;<%= @user.username %></h1>
     </div>
 
-    <div class="profile-search">
-      <%= form_with url: "/show", method: :get do |form| %>
-        <%= form.label :query, "Search:" %>
-        <%= form.text_field :query %>
-        <%= form.submit "Search" %>
-      <% end %>
-    </div>
-
     <div class="movies">
       <% if @thumbs %>
         <% @thumbs.each do |thumb| %>
