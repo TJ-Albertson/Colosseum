@@ -4,7 +4,7 @@ An app that lets you rate movies with a thumbs up or down. You can create an acc
 
 * Ruby version: 3.0.2
 
-* How to run:
+## How to run:
 - Must have a PostgreSQL database running
 - $ bundle install
 - $ rails server
