@@ -394,6 +394,10 @@ a {
   text-align: left;
 }
 
+#tmdb > p{
+  width: 465px
+}
+
 /* Small screens */
 @media only screen and (max-width: 600px) {
   .navbar {
