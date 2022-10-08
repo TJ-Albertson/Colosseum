@@ -1,24 +1,10 @@
-# README
+# The Colosseum
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+An app that lets you rate movies with a thumbs up or down. You can create an account and view other profiles to see what movies they rated. Uses The Movie Database API to get movie metadata.
 
-Things you may want to cover:
+* Ruby version: 3.0.2
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* How to run:
+- Must have a PostgreSQL database running
+- $ bundle install
+- $ rails server
