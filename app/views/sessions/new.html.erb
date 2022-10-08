@@ -1,12 +1,18 @@
 <div class="flex-container">
+
   <h1>Log In</h1>
+  <% flash.each do |type, msg| %>
+    <div style="color:#F4D03F">
+      <%= msg %>
+    </div>
+  <% end %>
   <%= form_tag sessions_path do %>
     <div class="flex-container">
       <%= label_tag "Username" %>
       <%= text_field_tag :username, nil, placeholder: "Username" %>
       <%= label_tag "Password" %>
       <%= password_field_tag :password, nil, placeholder: "Password" %>
-      <%= submit_tag "Log In"%>
+      <%= submit_tag "Log In" %>
     </div>
   <% end %>
   <%= link_to "Sign Up", "/signup" %>

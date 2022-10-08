@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   root "movies#search"
 
+  get "/info", to: "info#index"
   get "/movies", to: "movies#search"
   get "/profile", to: "users#show"
   get "/users", to: "users#search"

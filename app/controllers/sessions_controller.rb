@@ -9,11 +9,12 @@ class SessionsController < ApplicationController
       redirect_to @user
     else  
       redirect_to login_path
+      flash.alert = "Invalid Username/Password"
     end
   end
   
   def destroy
     session[:user_id] = nil
-    redirect_to root_url, notice: "Logged out!"
+    redirect_to login_path, notice: "Logged out!"
   end
 end
